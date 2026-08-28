@@ -8,7 +8,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 
 import appCss from "../styles.css?url";
@@ -213,7 +213,7 @@ function Sidebar() {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const [mobileOpen, setMobileOpen] = useStateMobileNav();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -225,7 +225,7 @@ function RootComponent() {
         </div>
 
         {/* Mobile top bar */}
-        <div className="sticky top-0 z-40 flex items-center justify-between border-b border-border bg-sidebar px-4 py-3 text-sidebar-foreground lg:hidden">
+        <div className="sticky top-0 z-40 flex items-center justify-between border-b border-sidebar-border bg-sidebar px-4 py-3 text-sidebar-foreground lg:hidden">
           <Link to="/" className="font-display text-lg font-semibold">
             Youstina
           </Link>
@@ -267,10 +267,4 @@ function RootComponent() {
       </div>
     </QueryClientProvider>
   );
-}
-
-// tiny local hook to avoid an extra file
-import { useState } from "react";
-function useStateMobileNav() {
-  return useState(false);
 }
