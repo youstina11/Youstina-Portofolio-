@@ -112,15 +112,67 @@
 
 @utility sidebar-bg-grad {
   background:
-    radial-gradient(120% 80% at 0% 0%, color-mix(in oklab, var(--sidebar-primary) 14%, transparent) 0%, transparent 55%),
+    radial-gradient(120% 80% at 0% 0%, color-mix(in oklab, var(--sidebar-primary) 16%, transparent) 0%, transparent 55%),
+    radial-gradient(80% 60% at 100% 100%, color-mix(in oklab, var(--sidebar-primary) 10%, transparent) 0%, transparent 50%),
     var(--sidebar);
 }
 
 @utility content-fade-in {
-  animation: content-fade-in 0.5s ease-out both;
+  animation: content-fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @keyframes content-fade-in {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(14px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@utility fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility hover-scale {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@utility float-soft {
+  animation: float-soft 6s ease-in-out infinite;
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@utility float-soft-delayed {
+  animation: float-soft 7s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+@utility ring-pulse {
+  animation: ring-pulse 3.5s ease-in-out infinite;
+}
+
+@keyframes ring-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--primary) 35%, transparent); }
+  50% { box-shadow: 0 0 0 14px color-mix(in oklab, var(--primary) 0%, transparent); }
+}
+
+@utility halo-glow {
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--primary) 38%, transparent), transparent 70%);
+  filter: blur(8px);
+}
+
+@utility text-gradient {
+  background: linear-gradient(120deg, var(--foreground), color-mix(in oklab, var(--primary) 75%, var(--foreground)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
