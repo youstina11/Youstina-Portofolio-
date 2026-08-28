@@ -9,11 +9,12 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
-import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
+import { Github, Linkedin, Mail, Menu, X, MapPin } from "lucide-react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
+import portrait from "@/assets/youstina-portrait.png.asset.json";
 
 const navItems = [
   { label: "Home", to: "/" },
@@ -88,18 +89,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Youstina — AI Engineer" },
+      { title: "Youstina Salah — Full-Stack & AI Engineer" },
       {
         name: "description",
         content:
-          "Youstina is an AI engineer building intelligent systems — machine learning, LLM applications, and production AI tooling.",
+          "Youstina Salah Nathan — full-stack developer and AI engineer building data-driven applications with .NET Core, Python, and machine learning.",
       },
-      { name: "author", content: "Youstina" },
-      { property: "og:title", content: "Youstina — AI Engineer" },
+      { name: "author", content: "Youstina Salah Nathan" },
+      { property: "og:title", content: "Youstina Salah — Full-Stack & AI Engineer" },
       {
         property: "og:description",
         content:
-          "AI engineer building intelligent systems — machine learning, LLM applications, and production AI tooling.",
+          "Full-stack developer and AI engineer building data-driven applications with .NET Core, Python, and machine learning.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -138,36 +139,44 @@ function RootShell({ children }: { children: ReactNode }) {
 function Sidebar() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
-    <aside className="sidebar-bg-grad flex h-full w-full flex-col text-sidebar-foreground">
-      <div className="flex flex-col items-center px-6 pt-12 pb-8 text-center">
-        <div className="relative mb-5 flex h-24 w-24 items-center justify-center rounded-full border-2 border-primary/40 bg-sidebar-accent text-3xl font-semibold text-primary shadow-lg">
-          Y
+    <aside className="sidebar-bg-grad flex h-full w-full flex-col overflow-y-auto text-sidebar-foreground">
+      <div className="flex flex-col items-center px-6 pt-12 pb-7 text-center">
+        {/* Catchy photo treatment */}
+        <div className="relative mb-5">
+          <div className="halo-glow absolute inset-0 -m-3 rounded-full" />
+          <div className="ring-pulse relative h-28 w-28 overflow-hidden rounded-full border-2 border-primary/60 bg-sidebar-accent shadow-xl">
+            <img
+              src={portrait.url}
+              alt="Youstina Salah Nathan"
+              className="h-full w-full object-cover object-top"
+            />
+          </div>
           <span className="absolute -bottom-1 -right-1 h-5 w-5 rounded-full border-4 border-sidebar bg-accent" />
         </div>
-        <h1 className="font-display text-2xl font-semibold tracking-tight text-sidebar-foreground">
-          Youstina
+        <h1 className="font-display text-xl font-semibold tracking-tight text-sidebar-foreground">
+          Youstina Salah
         </h1>
-        <p className="mt-1 text-sm font-medium text-primary">AI Engineer</p>
-        <p className="mt-3 text-xs leading-relaxed text-sidebar-foreground/60">
-          Building intelligent systems with machine learning and large language models.
+        <p className="mt-1 text-sm font-medium text-primary">Full-Stack & AI Engineer</p>
+        <p className="mt-2 inline-flex items-center gap-1 text-xs text-sidebar-foreground/55">
+          <MapPin className="h-3 w-3" /> Assiut, Egypt
         </p>
       </div>
 
       <nav className="px-4">
         <ul className="space-y-1">
-          {navItems.map((item) => {
+          {navItems.map((item, i) => {
             const active =
               item.to === "/"
                 ? pathname === "/"
                 : pathname.startsWith(item.to);
             return (
-              <li key={item.to}>
+              <li key={item.to} className="fade-up" style={{ animationDelay: `${i * 70}ms` }}>
                 <Link
                   to={item.to}
-                  className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200 ${
                     active
                       ? "bg-primary text-primary-foreground shadow-sm"
-                      : "text-sidebar-foreground/75 hover:bg-sidebar-accent hover:text-sidebar-foreground"
+                      : "text-sidebar-foreground/75 hover:bg-sidebar-accent hover:translate-x-1 hover:text-sidebar-foreground"
                   }`}
                 >
                   {item.label}
@@ -179,32 +188,36 @@ function Sidebar() {
       </nav>
 
       <div className="mt-auto px-6 py-8">
-        <div className="mb-3 h-px w-full bg-sidebar-border" />
+        <div className="mb-4 h-px w-full bg-sidebar-border" />
         <div className="flex items-center justify-center gap-5 text-sidebar-foreground/60">
           <a
-            href="https://github.com"
+            href="https://github.com/YoustinaSalah"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
-            className="transition-colors hover:text-primary"
+            className="transition-all duration-200 hover:scale-110 hover:text-primary"
           >
             <Github className="h-5 w-5" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/youstina-salah-nathan"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="transition-colors hover:text-primary"
+            className="transition-all duration-200 hover:scale-110 hover:text-primary"
           >
             <Linkedin className="h-5 w-5" />
           </a>
-          <a href="mailto:hello@youstina.dev" aria-label="Email" className="transition-colors hover:text-primary">
+          <a
+            href="mailto:youstenasalah123@gmail.com"
+            aria-label="Email"
+            className="transition-all duration-200 hover:scale-110 hover:text-primary"
+          >
             <Mail className="h-5 w-5" />
           </a>
         </div>
         <p className="mt-4 text-center text-[11px] text-sidebar-foreground/40">
-          © {new Date().getFullYear()} Youstina
+          © {new Date().getFullYear()} Youstina Salah
         </p>
       </div>
     </aside>
@@ -227,7 +240,7 @@ function RootComponent() {
         {/* Mobile top bar */}
         <div className="sticky top-0 z-40 flex items-center justify-between border-b border-sidebar-border bg-sidebar px-4 py-3 text-sidebar-foreground lg:hidden">
           <Link to="/" className="font-display text-lg font-semibold">
-            Youstina
+            Youstina Salah
           </Link>
           <button
             onClick={() => setMobileOpen(true)}
