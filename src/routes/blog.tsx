@@ -4,17 +4,17 @@ import { ArrowUpRight } from "lucide-react";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Writing — Youstina, AI Engineer" },
+      { title: "Writing — Youstina Salah" },
       {
         name: "description",
         content:
-          "Notes and articles by Youstina on building LLM applications, evaluation, and shipping machine learning to production.",
+          "Notes and write-ups by Youstina Salah Nathan on full-stack development, AI, RAG systems, and data analysis.",
       },
-      { property: "og:title", content: "Writing — Youstina, AI Engineer" },
+      { property: "og:title", content: "Writing — Youstina Salah" },
       {
         property: "og:description",
         content:
-          "Notes and articles on building LLM applications, evaluation, and shipping machine learning to production.",
+          "Notes and write-ups on full-stack development, AI, RAG systems, and data analysis.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -25,66 +25,67 @@ export const Route = createFileRoute("/blog")({
 
 const posts = [
   {
-    title: "Why your RAG demo works and production doesn't",
+    title: "Building PostpartumRAG: a grounded, citation-traceable chatbot",
     date: "Aug 2026",
-    readingTime: "8 min",
-    excerpt:
-      "Retrieval looks magical in a demo and falls apart at scale. A field guide to the failure modes that only show up once real users ask real questions.",
-    tag: "LLM",
-  },
-  {
-    title: "An eval harness is a product, not a script",
-    date: "Jun 2026",
-    readingTime: "6 min",
-    excerpt:
-      "The difference between an eval that catches regressions and one that gives false confidence. How to design rubrics your team will actually trust.",
-    tag: "Evaluation",
-  },
-  {
-    title: "Active learning when labels are expensive",
-    date: "Apr 2026",
     readingTime: "7 min",
     excerpt:
-      "A practical workflow for cutting labeling costs on imbalanced datasets without giving up recall on the classes that matter.",
+      "How we chunked WHO, mhGAP, and NICE clinical guidance into a section-aware retrieval pipeline and reached the top 3 at a national hackathon.",
+    tag: "RAG",
+  },
+  {
+    title: "Model fallback chains in a Flask CV generator",
+    date: "Jul 2026",
+    readingTime: "5 min",
+    excerpt:
+      "Designing a generative AI service that gracefully degrades from Gemini to Claude to a local model without breaking the user experience.",
+    tag: "GenAI",
+  },
+  {
+    title: "Cleaning 50,000+ records the boring, correct way",
+    date: "May 2026",
+    readingTime: "6 min",
+    excerpt:
+      "The Pandas and SQL workflow I used to validate a messy dataset before it ever touched a Power BI dashboard.",
+    tag: "Data",
+  },
+  {
+    title: "From notebooks to production: my ML intern projects",
+    date: "Mar 2026",
+    readingTime: "4 min",
+    excerpt:
+      "Lessons from shipping Iris Classification, Unemployment Rate Analysis, and Car Price Prediction as documented, reproducible notebooks.",
     tag: "ML",
   },
   {
-    title: "Quantizing a vision model for the edge",
-    date: "Feb 2026",
+    title: "Role-based auth in ASP.NET Core the simple way",
+    date: "Jan 2026",
     readingTime: "5 min",
     excerpt:
-      "Going from a PyTorch checkpoint to a 3× faster edge runtime, and the accuracy trade-offs I made along the way.",
-    tag: "MLOps",
-  },
-  {
-    title: "Prompts are code: version them like it",
-    date: "Dec 2025",
-    readingTime: "4 min",
-    excerpt:
-      "How a versioned prompt registry with diffing and rollback saved a team from a silent production regression.",
-    tag: "LLM",
+      "How I wired user authentication and role-based access into an e-commerce storefront without over-engineering it.",
+    tag: "Full-Stack",
   },
 ];
 
 function BlogPage() {
   return (
     <div className="content-fade-in">
-      <header className="mb-10">
+      <header className="fade-up mb-10">
         <h1 className="font-display text-4xl font-bold tracking-tight text-foreground">
           Writing
         </h1>
         <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
-          Notes from the trenches of applied AI — what worked, what didn't, and the
-          lessons that only come from putting models in front of real users.
+          Notes from building full-stack apps, AI systems, and data pipelines — the parts
+          that don't fit in a project README.
         </p>
       </header>
 
       <div className="space-y-3">
-        {posts.map((p) => (
+        {posts.map((p, i) => (
           <a
             key={p.title}
             href="#"
-            className="group flex flex-col gap-2 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/40 sm:flex-row sm:items-center sm:justify-between"
+            className="hover-scale fade-up group flex flex-col gap-2 rounded-xl border border-border bg-card p-5 hover:border-primary/40 sm:flex-row sm:items-center sm:justify-between"
+            style={{ animationDelay: `${i * 70}ms` }}
           >
             <div className="max-w-2xl">
               <div className="flex items-center gap-3 text-xs text-muted-foreground">

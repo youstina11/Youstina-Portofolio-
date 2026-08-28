@@ -1,22 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
-import { Mail, Linkedin, Github, Send } from "lucide-react";
+import { Mail, Linkedin, Github, Send, Phone, MapPin } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Youstina, AI Engineer" },
+      { title: "Contact — Youstina Salah" },
       {
         name: "description",
         content:
-          "Get in touch with Youstina about AI engineering, machine learning, and LLM application work.",
+          "Get in touch with Youstina Salah Nathan about full-stack, AI engineering, and data analysis opportunities.",
       },
-      { property: "og:title", content: "Contact — Youstina, AI Engineer" },
+      { property: "og:title", content: "Contact — Youstina Salah" },
       {
         property: "og:description",
         content:
-          "Get in touch about AI engineering, machine learning, and LLM application work.",
+          "Get in touch about full-stack, AI engineering, and data analysis opportunities.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -42,20 +42,21 @@ function ContactPage() {
 
   return (
     <div className="content-fade-in">
-      <header className="mb-10">
+      <header className="fade-up mb-10">
         <h1 className="font-display text-4xl font-bold tracking-tight text-foreground">
           Contact
         </h1>
         <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
-          Have a project, a role, or just a question about applied AI? I read every
-          message and reply within a couple of days.
+          Have a role, a project, or a question about full-stack, AI, or data work? I read
+          every message and reply within a couple of days.
         </p>
       </header>
 
       <div className="grid gap-8 sm:grid-cols-5">
         <form
           onSubmit={handleSubmit}
-          className="space-y-4 rounded-xl border border-border bg-card p-6 sm:col-span-3"
+          className="fade-up space-y-4 rounded-xl border border-border bg-card p-6 sm:col-span-3"
+          style={{ animationDelay: "80ms" }}
         >
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
@@ -97,34 +98,45 @@ function ContactPage() {
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               className="w-full resize-none rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/30"
-              placeholder="Tell me about the project or role…"
+              placeholder="Tell me about the role or project…"
             />
           </div>
           <button
             type="submit"
             disabled={sending}
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60"
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 disabled:opacity-60"
           >
             <Send className="h-4 w-4" />
             {sending ? "Sending…" : "Send message"}
           </button>
         </form>
 
-        <div className="space-y-4 sm:col-span-2">
-          <div className="rounded-xl border border-border bg-card p-6">
+        <div className="fade-up space-y-4 sm:col-span-2" style={{ animationDelay: "160ms" }}>
+          <div className="hover-scale rounded-xl border border-border bg-card p-6 hover:border-primary/40">
             <h2 className="font-display text-base font-semibold text-foreground">
               Direct
             </h2>
             <div className="mt-3 space-y-3 text-sm">
               <a
-                href="mailto:hello@youstina.dev"
+                href="mailto:youstenasalah123@gmail.com"
                 className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
               >
                 <Mail className="h-4 w-4 text-primary" />
-                hello@youstina.dev
+                youstenasalah123@gmail.com
               </a>
               <a
-                href="https://linkedin.com"
+                href="tel:+201007497154"
+                className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
+              >
+                <Phone className="h-4 w-4 text-primary" />
+                +20 100 749 7154
+              </a>
+              <p className="flex items-center gap-3 text-muted-foreground">
+                <MapPin className="h-4 w-4 text-primary" />
+                Assiut, Egypt
+              </p>
+              <a
+                href="https://www.linkedin.com/in/youstina-salah-nathan"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
@@ -133,7 +145,7 @@ function ContactPage() {
                 LinkedIn
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/YoustinaSalah"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
@@ -143,13 +155,13 @@ function ContactPage() {
               </a>
             </div>
           </div>
-          <div className="rounded-xl border border-border bg-card p-6">
+          <div className="hover-scale rounded-xl border border-border bg-card p-6 hover:border-primary/40">
             <h2 className="font-display text-base font-semibold text-foreground">
               Availability
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Currently open to AI engineering roles and contract work on LLM
-              applications and production ML systems.
+              Open to full-stack, AI engineering, and data analysis roles and projects.
+              Trilingual (Arabic, English, French) and comfortable working remotely.
             </p>
           </div>
         </div>
