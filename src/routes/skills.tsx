@@ -136,8 +136,8 @@ function SkillsPage() {
         </h2>
         <ol className="mt-6 space-y-6 border-l border-border pl-6">
           {experience.map((e) => (
-            <li key={e.role + e.period} className="relative">
-              <span className="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full border-2 border-background bg-primary" />
+            <li key={e.role + e.period} className="relative pl-4">
+              <span className="absolute left-0 top-1.5 h-3 w-3 rounded-full border-2 border-background bg-primary" />
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h3 className="font-display text-lg font-semibold text-foreground">
                   {e.role}
