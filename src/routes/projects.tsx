@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/Reveal";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Github, Trophy, ExternalLink } from "lucide-react";
 
@@ -94,7 +95,7 @@ const projects = [
 function ProjectsPage() {
   return (
     <div className="content-fade-in">
-      <header className="fade-up mb-10">
+      <Reveal as="header" className="mb-10">
         <h1 className="font-display text-4xl font-bold tracking-tight text-foreground">
           Projects
         </h1>
@@ -102,9 +103,9 @@ function ProjectsPage() {
           A selection of full-stack, AI, and data work — from a national-hackathon-winning
           RAG chatbot to production-style .NET Core applications and ML notebooks.
         </p>
-      </header>
+      </Reveal>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <Reveal className="grid gap-5 sm:grid-cols-2" delay={80}>
         {projects.map((p, i) => (
           <article
             key={p.name}
@@ -158,7 +159,7 @@ function ProjectsPage() {
             </div>
           </article>
         ))}
-      </div>
+      </Reveal>
     </div>
   );
 }

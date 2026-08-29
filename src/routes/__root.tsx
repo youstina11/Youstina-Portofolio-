@@ -9,7 +9,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
-import { Github, Linkedin, Mail, Menu, X, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, Menu, X, MapPin, Download } from "lucide-react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -144,23 +144,34 @@ function Sidebar() {
         {/* Catchy photo treatment */}
         <div className="relative mb-5">
           <div className="halo-glow absolute inset-0 -m-3 rounded-full" />
-          <div className="ring-pulse relative h-28 w-28 overflow-hidden rounded-full border-2 border-primary/60 bg-sidebar-accent shadow-xl">
+          <div className="ring-pulse relative h-28 w-28 overflow-hidden rounded-full border-2 border-sidebar-primary/60 bg-sidebar-accent shadow-xl">
             <img
               src={portrait.url}
               alt="Youstina Salah Nathan"
               className="h-full w-full object-cover object-top"
             />
           </div>
-          <span className="absolute -bottom-1 -right-1 h-5 w-5 rounded-full border-4 border-sidebar bg-accent" />
+          <span className="absolute -bottom-1 -right-1 h-5 w-5 rounded-full border-4 border-sidebar bg-sidebar-primary" />
         </div>
         <h1 className="font-display text-xl font-semibold tracking-tight text-sidebar-foreground">
           Youstina Salah
         </h1>
-        <p className="mt-1 text-sm font-medium text-primary">Full-Stack & AI Engineer</p>
-        <p className="mt-2 inline-flex items-center gap-1 text-xs text-sidebar-foreground/55">
+        <p className="mt-1 text-sm font-medium text-sidebar-primary">
+          Full-Stack & AI Engineer
+        </p>
+        <p className="mt-2 inline-flex items-center gap-1 text-xs text-sidebar-foreground/75">
           <MapPin className="h-3 w-3" /> Assiut, Egypt
         </p>
+        <a
+          href="/Youstina-Salah-Nathan-CV.pdf"
+          download
+          className="mt-5 inline-flex items-center gap-2 rounded-lg bg-sidebar-primary px-4 py-2 text-sm font-semibold text-sidebar-primary-foreground transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring"
+        >
+          <Download className="h-4 w-4" />
+          Download CV
+        </a>
       </div>
+
 
       <nav className="px-4">
         <ul className="space-y-1">
@@ -176,7 +187,7 @@ function Sidebar() {
                   className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200 ${
                     active
                       ? "bg-primary text-primary-foreground shadow-sm"
-                      : "text-sidebar-foreground/75 hover:bg-sidebar-accent hover:translate-x-1 hover:text-sidebar-foreground"
+                      : "text-sidebar-foreground/85 hover:bg-sidebar-accent hover:translate-x-1 hover:text-sidebar-foreground"
                   }`}
                 >
                   {item.label}
@@ -189,13 +200,13 @@ function Sidebar() {
 
       <div className="mt-auto px-6 py-8">
         <div className="mb-4 h-px w-full bg-sidebar-border" />
-        <div className="flex items-center justify-center gap-5 text-sidebar-foreground/60">
+        <div className="flex items-center justify-center gap-5 text-sidebar-foreground/80">
           <a
             href="https://github.com/YoustinaSalah"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
-            className="transition-all duration-200 hover:scale-110 hover:text-primary"
+            className="transition-all duration-200 hover:scale-110 hover:text-sidebar-primary"
           >
             <Github className="h-5 w-5" />
           </a>
@@ -204,19 +215,19 @@ function Sidebar() {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="transition-all duration-200 hover:scale-110 hover:text-primary"
+            className="transition-all duration-200 hover:scale-110 hover:text-sidebar-primary"
           >
             <Linkedin className="h-5 w-5" />
           </a>
           <a
             href="mailto:youstenasalah123@gmail.com"
             aria-label="Email"
-            className="transition-all duration-200 hover:scale-110 hover:text-primary"
+            className="transition-all duration-200 hover:scale-110 hover:text-sidebar-primary"
           >
             <Mail className="h-5 w-5" />
           </a>
         </div>
-        <p className="mt-4 text-center text-[11px] text-sidebar-foreground/40">
+        <p className="mt-4 text-center text-[11px] text-sidebar-foreground/70">
           © {new Date().getFullYear()} Youstina Salah
         </p>
       </div>
