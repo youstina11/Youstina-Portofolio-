@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/Reveal";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Sparkles, Code2, Brain, BarChart3 } from "lucide-react";
 import portrait from "@/assets/youstina-portrait.png.asset.json";
@@ -28,7 +29,7 @@ function Index() {
   return (
     <div className="content-fade-in space-y-20">
       {/* Hero */}
-      <section className="grid items-center gap-10 sm:grid-cols-5">
+      <Reveal as="section" className="grid items-center gap-10 sm:grid-cols-5">
         <div className="sm:col-span-3">
           <div className="fade-up inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
@@ -81,10 +82,10 @@ function Index() {
             <BarChart3 className="h-3.5 w-3.5 text-primary" /> Power BI
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* About */}
-      <section className="fade-up">
+      <Reveal as="section" className="fade-up">
         <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground">
           About
         </h2>
@@ -102,7 +103,7 @@ function Index() {
             up new tools, and happiest where engineering meets data and AI.
           </p>
         </div>
-      </section>
+      </Reveal>
 
       {/* Focus areas */}
       <section>
@@ -147,10 +148,10 @@ function Index() {
             </div>
           ))}
         </div>
-      </section>
+      </Reveal>
 
       {/* Selected work teaser */}
-      <section className="fade-up">
+      <Reveal as="section" className="fade-up">
         <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground">
           Selected work
         </h2>
@@ -181,7 +182,7 @@ function Index() {
             </Link>
           ))}
         </div>
-      </section>
+      </Reveal>
     </div>
   );
 }

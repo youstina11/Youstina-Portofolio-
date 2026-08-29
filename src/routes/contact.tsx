@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/Reveal";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -42,7 +43,7 @@ function ContactPage() {
 
   return (
     <div className="content-fade-in">
-      <header className="fade-up mb-10">
+      <Reveal as="header" className="fade-up mb-10">
         <h1 className="font-display text-4xl font-bold tracking-tight text-foreground">
           Contact
         </h1>
@@ -50,7 +51,7 @@ function ContactPage() {
           Have a role, a project, or a question about full-stack, AI, or data work? I read
           every message and reply within a couple of days.
         </p>
-      </header>
+      </Reveal>
 
       <div className="grid gap-8 sm:grid-cols-5">
         <form

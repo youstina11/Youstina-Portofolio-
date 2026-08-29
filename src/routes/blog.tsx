@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/Reveal";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 
@@ -69,7 +70,7 @@ const posts = [
 function BlogPage() {
   return (
     <div className="content-fade-in">
-      <header className="fade-up mb-10">
+      <Reveal as="header" className="fade-up mb-10">
         <h1 className="font-display text-4xl font-bold tracking-tight text-foreground">
           Writing
         </h1>
@@ -77,7 +78,7 @@ function BlogPage() {
           Notes from building full-stack apps, AI systems, and data pipelines — the parts
           that don't fit in a project README.
         </p>
-      </header>
+      </Reveal>
 
       <div className="space-y-3">
         {posts.map((p, i) => (

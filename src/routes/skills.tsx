@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/Reveal";
 import { createFileRoute } from "@tanstack/react-router";
 import { GraduationCap, Languages, Award } from "lucide-react";
 
@@ -140,14 +141,14 @@ const certifications = [
 function SkillsPage() {
   return (
     <div className="content-fade-in space-y-14">
-      <header className="fade-up">
+      <Reveal as="header" className="fade-up">
         <h1 className="font-display text-4xl font-bold tracking-tight text-foreground">
           Skills & Experience
         </h1>
         <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
           A full-stack, AI, and data toolkit — and the project path that built it.
         </p>
-      </header>
+      </Reveal>
 
       {/* Skills */}
       <section>
@@ -177,7 +178,7 @@ function SkillsPage() {
             </div>
           ))}
         </div>
-      </section>
+      </Reveal>
 
       {/* Experience */}
       <section>
@@ -218,10 +219,10 @@ function SkillsPage() {
             </li>
           ))}
         </ol>
-      </section>
+      </Reveal>
 
       {/* Education + Languages */}
-      <section className="grid gap-4 sm:grid-cols-2">
+      <Reveal as="section" className="grid gap-4 sm:grid-cols-2">
         <div className="hover-scale fade-up rounded-xl border border-border bg-card p-6 hover:border-primary/40">
           <div className="flex items-center gap-2">
             <GraduationCap className="h-5 w-5 text-primary" />
@@ -247,7 +248,7 @@ function SkillsPage() {
           </ul>
           <p className="mt-4 text-xs text-muted-foreground">English course — The American University in Cairo (AUC), 2022.</p>
         </div>
-      </section>
+      </Reveal>
 
       {/* Certifications */}
       <section>
@@ -269,7 +270,7 @@ function SkillsPage() {
             </div>
           ))}
         </div>
-      </section>
+      </Reveal>
     </div>
   );
 }
