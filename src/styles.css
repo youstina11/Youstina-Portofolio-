@@ -200,3 +200,21 @@
   }
 }
 
+
+/* Smooth scrolling for section nav */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+@media (min-width: 1024px) {
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+}
