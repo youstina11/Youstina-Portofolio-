@@ -2,7 +2,7 @@ import { Reveal } from "@/components/Reveal";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
-import { Mail, Linkedin, Github, Send, Phone, MapPin } from "lucide-react";
+import { Mail, Linkedin, Github, Send, Phone, MapPin, Download } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
