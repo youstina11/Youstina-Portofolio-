@@ -95,7 +95,7 @@ const projects = [
 function ProjectsPage() {
   return (
     <div className="content-fade-in">
-      <Reveal as="header" className="fade-up mb-10">
+      <Reveal as="header" className="mb-10">
         <h1 className="font-display text-4xl font-bold tracking-tight text-foreground">
           Projects
         </h1>

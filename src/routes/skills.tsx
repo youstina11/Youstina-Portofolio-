@@ -141,7 +141,7 @@ const certifications = [
 function SkillsPage() {
   return (
     <div className="content-fade-in space-y-14">
-      <Reveal as="header" className="fade-up">
+      <Reveal as="header">
         <h1 className="font-display text-4xl font-bold tracking-tight text-foreground">
           Skills & Experience
         </h1>

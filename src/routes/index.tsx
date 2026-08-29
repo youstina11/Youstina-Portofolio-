@@ -85,7 +85,7 @@ function Index() {
       </Reveal>
 
       {/* About */}
-      <Reveal as="section" className="fade-up">
+      <Reveal as="section">
         <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground">
           About
         </h2>
@@ -151,7 +151,7 @@ function Index() {
       </Reveal>
 
       {/* Selected work teaser */}
-      <Reveal as="section" className="fade-up">
+      <Reveal as="section">
         <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground">
           Selected work
         </h2>
