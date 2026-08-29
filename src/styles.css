@@ -172,8 +172,31 @@
 }
 
 @utility text-gradient {
-  background: linear-gradient(120deg, var(--foreground), color-mix(in oklab, var(--primary) 75%, var(--foreground)));
+  background: linear-gradient(120deg, var(--foreground), color-mix(in oklab, var(--primary) 85%, var(--foreground)));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
