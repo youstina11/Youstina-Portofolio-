@@ -105,7 +105,7 @@ function ProjectsPage() {
         </p>
       </Reveal>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <Reveal className="grid gap-5 sm:grid-cols-2" delay={80}>
         {projects.map((p, i) => (
           <article
             key={p.name}
@@ -159,7 +159,7 @@ function ProjectsPage() {
             </div>
           </article>
         ))}
-      </div>
+      </Reveal>
     </div>
   );
 }

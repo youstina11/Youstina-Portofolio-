@@ -80,7 +80,7 @@ function BlogPage() {
         </p>
       </Reveal>
 
-      <div className="space-y-3">
+      <Reveal className="space-y-3" delay={80}>
         {posts.map((p, i) => (
           <a
             key={p.title}
@@ -106,7 +106,7 @@ function BlogPage() {
             <ArrowUpRight className="hidden h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-primary sm:block" />
           </a>
         ))}
-      </div>
+      </Reveal>
     </div>
   );
 }
