@@ -144,23 +144,34 @@ function Sidebar() {
         {/* Catchy photo treatment */}
         <div className="relative mb-5">
           <div className="halo-glow absolute inset-0 -m-3 rounded-full" />
-          <div className="ring-pulse relative h-28 w-28 overflow-hidden rounded-full border-2 border-primary/60 bg-sidebar-accent shadow-xl">
+          <div className="ring-pulse relative h-28 w-28 overflow-hidden rounded-full border-2 border-sidebar-primary/60 bg-sidebar-accent shadow-xl">
             <img
               src={portrait.url}
               alt="Youstina Salah Nathan"
               className="h-full w-full object-cover object-top"
             />
           </div>
-          <span className="absolute -bottom-1 -right-1 h-5 w-5 rounded-full border-4 border-sidebar bg-accent" />
+          <span className="absolute -bottom-1 -right-1 h-5 w-5 rounded-full border-4 border-sidebar bg-sidebar-primary" />
         </div>
         <h1 className="font-display text-xl font-semibold tracking-tight text-sidebar-foreground">
           Youstina Salah
         </h1>
-        <p className="mt-1 text-sm font-medium text-primary">Full-Stack & AI Engineer</p>
-        <p className="mt-2 inline-flex items-center gap-1 text-xs text-sidebar-foreground/55">
+        <p className="mt-1 text-sm font-medium text-sidebar-primary">
+          Full-Stack & AI Engineer
+        </p>
+        <p className="mt-2 inline-flex items-center gap-1 text-xs text-sidebar-foreground/75">
           <MapPin className="h-3 w-3" /> Assiut, Egypt
         </p>
+        <a
+          href="/Youstina-Salah-Nathan-CV.pdf"
+          download
+          className="mt-5 inline-flex items-center gap-2 rounded-lg bg-sidebar-primary px-4 py-2 text-sm font-semibold text-sidebar-primary-foreground transition-all duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring"
+        >
+          <Download className="h-4 w-4" />
+          Download CV
+        </a>
       </div>
+
 
       <nav className="px-4">
         <ul className="space-y-1">
