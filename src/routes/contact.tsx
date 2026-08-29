@@ -175,7 +175,7 @@ function ContactPage() {
             </p>
           </div>
         </div>
-      </div>
+      </Reveal>
     </div>
   );
 }
