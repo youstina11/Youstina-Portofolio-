@@ -187,7 +187,7 @@ function Sidebar() {
                   className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200 ${
                     active
                       ? "bg-primary text-primary-foreground shadow-sm"
-                      : "text-sidebar-foreground/75 hover:bg-sidebar-accent hover:translate-x-1 hover:text-sidebar-foreground"
+                      : "text-sidebar-foreground/85 hover:bg-sidebar-accent hover:translate-x-1 hover:text-sidebar-foreground"
                   }`}
                 >
                   {item.label}
@@ -200,13 +200,13 @@ function Sidebar() {
 
       <div className="mt-auto px-6 py-8">
         <div className="mb-4 h-px w-full bg-sidebar-border" />
-        <div className="flex items-center justify-center gap-5 text-sidebar-foreground/60">
+        <div className="flex items-center justify-center gap-5 text-sidebar-foreground/80">
           <a
             href="https://github.com/YoustinaSalah"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
-            className="transition-all duration-200 hover:scale-110 hover:text-primary"
+            className="transition-all duration-200 hover:scale-110 hover:text-sidebar-primary"
           >
             <Github className="h-5 w-5" />
           </a>
@@ -215,19 +215,19 @@ function Sidebar() {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="transition-all duration-200 hover:scale-110 hover:text-primary"
+            className="transition-all duration-200 hover:scale-110 hover:text-sidebar-primary"
           >
             <Linkedin className="h-5 w-5" />
           </a>
           <a
             href="mailto:youstenasalah123@gmail.com"
             aria-label="Email"
-            className="transition-all duration-200 hover:scale-110 hover:text-primary"
+            className="transition-all duration-200 hover:scale-110 hover:text-sidebar-primary"
           >
             <Mail className="h-5 w-5" />
           </a>
         </div>
-        <p className="mt-4 text-center text-[11px] text-sidebar-foreground/40">
+        <p className="mt-4 text-center text-[11px] text-sidebar-foreground/70">
           © {new Date().getFullYear()} Youstina Salah
         </p>
       </div>
