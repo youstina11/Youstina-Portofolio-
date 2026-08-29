@@ -51,9 +51,18 @@ function ContactPage() {
           Have a role, a project, or a question about full-stack, AI, or data work? I read
           every message and reply within a couple of days.
         </p>
+        <a
+          href="/Youstina-Salah-Nathan-CV.pdf"
+          download
+          className="mt-5 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25"
+        >
+          <Download className="h-4 w-4" />
+          Download my CV (PDF)
+        </a>
       </Reveal>
 
-      <div className="grid gap-8 sm:grid-cols-5">
+      <Reveal className="grid gap-8 sm:grid-cols-5" delay={80}>
+
         <form
           onSubmit={handleSubmit}
           className="fade-up space-y-4 rounded-xl border border-border bg-card p-6 sm:col-span-3"
