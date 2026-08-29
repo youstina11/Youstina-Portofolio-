@@ -151,7 +151,7 @@ function SkillsPage() {
       </Reveal>
 
       {/* Skills */}
-      <section>
+      <Reveal as="section">
         <h2 className="fade-up font-display text-2xl font-semibold tracking-tight text-foreground">
           Skills
         </h2>
@@ -181,7 +181,7 @@ function SkillsPage() {
       </Reveal>
 
       {/* Experience */}
-      <section>
+      <Reveal as="section">
         <h2 className="fade-up font-display text-2xl font-semibold tracking-tight text-foreground">
           Experience
         </h2>
@@ -251,7 +251,7 @@ function SkillsPage() {
       </Reveal>
 
       {/* Certifications */}
-      <section>
+      <Reveal as="section">
         <div className="fade-up flex items-center gap-2">
           <Award className="h-5 w-5 text-primary" />
           <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground">

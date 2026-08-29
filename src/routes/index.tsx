@@ -106,7 +106,7 @@ function Index() {
       </Reveal>
 
       {/* Focus areas */}
-      <section>
+      <Reveal as="section">
         <h2 className="fade-up font-display text-2xl font-semibold tracking-tight text-foreground">
           What I do
         </h2>
