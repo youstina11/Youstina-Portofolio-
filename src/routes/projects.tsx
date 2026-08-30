@@ -24,7 +24,15 @@ export const Route = createFileRoute("/projects")({
   component: ProjectsPage,
 });
 
-const projects = [
+const projects: {
+  name: string;
+  tag: string;
+  year: string;
+  award?: string;
+  description: string;
+  stack: string[];
+  repo?: string;
+}[] = [
   {
     name: "PostpartumRAG — Maternal Mental Health Chatbot",
     tag: "RAG · GenAI",
@@ -33,6 +41,7 @@ const projects = [
     description:
       "A grounded, citation-traceable RAG chatbot supporting maternal mental health guidance. Section-aware chunking of WHO, mhGAP, and NICE CG192 clinical sources with Gemini embeddings and Supabase vector search.",
     stack: ["Angular", "Express.js", "MongoDB", "Python", "Gemini", "Supabase"],
+    repo: "https://github.com/youstina11/-PostpartumRAG-Mental-Health-Care-Evidence-Grounded-AI-Healthcare-Assistant",
   },
   {
     name: "Jobify — AI-Powered Employment Platform",
@@ -41,6 +50,7 @@ const projects = [
     description:
       "Owned the AI/Python backend across a 3-role team. Delivered an AI Interview System (OpenCV, MediaPipe, Whisper, Claude & Gemini APIs), a Flask CV Generator with model fallback chains, and a CV Analyzer (TF-IDF, Cosine & Jaccard similarity). Defended the full architecture to academic and technical stakeholders.",
     stack: ["Python", "Flask", "OpenCV", "MediaPipe", "Whisper", "Claude", "Gemini"],
+    repo: "https://github.com/youstina11/Graduation-Project",
   },
   {
     name: "E-Commerce Web Application",
@@ -51,12 +61,40 @@ const projects = [
     stack: ["ASP.NET Core", "EF Core", "SQL Server", "MVC", "Web API"],
   },
   {
-    name: "Machine Learning Intern Projects",
-    tag: "ML · Data",
-    year: "2024–2025",
+    name: "Iris Flower Classification",
+    tag: "ML · Python",
+    year: "2025",
     description:
-      "Three end-to-end ML projects shipped as production-ready notebooks: Iris Classification, Unemployment Rate Analysis, and Car Price Prediction using Pandas, NumPy, and scikit-learn, with outcomes documented via write-ups.",
-    stack: ["Python", "Pandas", "NumPy", "scikit-learn"],
+      "A Random Forest classifier that identifies Iris species (Setosa, Versicolor, Virginica) with full data exploration, model training, and evaluation in a documented notebook.",
+    stack: ["Python", "scikit-learn", "Pandas", "Matplotlib"],
+    repo: "https://github.com/youstina11/Task1-Iris-Flower-Classification-",
+  },
+  {
+    name: "Unemployment Rate Analysis",
+    tag: "Data · EDA",
+    year: "2025",
+    description:
+      "Exploratory data analysis of unemployment trends in India — regional patterns, urban vs. rural differences, seasonality, and the impact of COVID-19, visualized end to end.",
+    stack: ["Python", "Pandas", "Seaborn", "Jupyter"],
+    repo: "https://github.com/youstina11/Task-2-Unemployment-Rate-Analysis-",
+  },
+  {
+    name: "Car Price Prediction",
+    tag: "ML · Regression",
+    year: "2025",
+    description:
+      "Machine learning pipeline predicting car prices: data preprocessing, EDA, regression modeling, feature importance analysis, and model evaluation.",
+    stack: ["Python", "scikit-learn", "Pandas", "NumPy"],
+    repo: "https://github.com/youstina11/Task-3-Car-price-prediction",
+  },
+  {
+    name: "End-to-End Data Pipeline — EDA & SQLite",
+    tag: "Data · Pipeline",
+    year: "2025",
+    description:
+      "A mini project building an end-to-end data pipeline: Python exploratory analysis integrated with a SQLite database for structured querying and reporting.",
+    stack: ["Python", "SQLite", "Pandas", "Jupyter"],
+    repo: "https://github.com/youstina11/EDA-mini-project-",
   },
   {
     name: "Data Analysis Capstone",
@@ -141,21 +179,24 @@ function ProjectsPage() {
             </div>
             <div className="mt-5 flex items-center gap-4 border-t border-border pt-4">
               <a
-                href="https://github.com/YoustinaSalah"
+                href={p.repo ?? "https://github.com/youstina11"}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
               >
-                <Github className="h-3.5 w-3.5" /> Code
+                <Github className="h-3.5 w-3.5" />
+                {p.repo ? "View on GitHub" : "GitHub profile"}
               </a>
-              <a
-                href="https://github.com/YoustinaSalah"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
-              >
-                Details <ExternalLink className="h-3.5 w-3.5" />
-              </a>
+              {p.repo && (
+                <a
+                  href={`${p.repo}#readme`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Details <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              )}
             </div>
           </article>
         ))}

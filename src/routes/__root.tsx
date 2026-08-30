@@ -202,7 +202,7 @@ function Sidebar() {
         <div className="mb-4 h-px w-full bg-sidebar-border" />
         <div className="flex items-center justify-center gap-5 text-sidebar-foreground/80">
           <a
-            href="https://github.com/YoustinaSalah"
+            href="https://github.com/youstina11"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"

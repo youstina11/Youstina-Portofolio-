@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/Reveal";
+import { SectionNav } from "@/components/SectionNav";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Sparkles, Code2, Brain, BarChart3 } from "lucide-react";
 import portrait from "@/assets/youstina-portrait.png.asset.json";
@@ -27,9 +28,18 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="content-fade-in space-y-20">
+    <div className="content-fade-in">
+      <SectionNav
+        sections={[
+          { id: "hero", label: "Intro" },
+          { id: "about", label: "About" },
+          { id: "what-i-do", label: "What I do" },
+          { id: "selected-work", label: "Selected work" },
+        ]}
+      />
+      <div className="space-y-20">
       {/* Hero */}
-      <Reveal as="section" className="grid items-center gap-10 sm:grid-cols-5">
+      <Reveal id="hero" as="section" className="scroll-mt-28 grid items-center gap-10 sm:grid-cols-5">
         <div className="sm:col-span-3">
           <div className="fade-up inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
@@ -85,7 +95,7 @@ function Index() {
       </Reveal>
 
       {/* About */}
-      <Reveal as="section">
+      <Reveal id="about" as="section" className="scroll-mt-28">
         <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground">
           About
         </h2>
@@ -106,7 +116,7 @@ function Index() {
       </Reveal>
 
       {/* Focus areas */}
-      <Reveal as="section">
+      <Reveal id="what-i-do" as="section" className="scroll-mt-28">
         <h2 className="fade-up font-display text-2xl font-semibold tracking-tight text-foreground">
           What I do
         </h2>
@@ -151,7 +161,7 @@ function Index() {
       </Reveal>
 
       {/* Selected work teaser */}
-      <Reveal as="section">
+      <Reveal id="selected-work" as="section" className="scroll-mt-28">
         <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground">
           Selected work
         </h2>
@@ -183,6 +193,7 @@ function Index() {
           ))}
         </div>
       </Reveal>
+      </div>
     </div>
   );
 }
