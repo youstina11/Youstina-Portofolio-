@@ -1,6 +1,8 @@
 import { Reveal } from "@/components/Reveal";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
+import { sendContactMessage } from "@/lib/contact.functions";
 import { toast } from "sonner";
 import { Mail, Linkedin, Github, Send, Phone, MapPin, Download } from "lucide-react";
 
@@ -29,16 +31,22 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sending, setSending] = useState(false);
+  const send = useServerFn(sendContactMessage);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    // Demo: no backend yet — wire to an email service or server function later.
-    setTimeout(() => {
-      setSending(false);
-      toast.success("Thanks! Your message has been noted. I'll reply soon.");
+    try {
+      await send({ data: form });
+      toast.success("Thanks! Your message is on its way — I'll reply soon.");
       setForm({ name: "", email: "", message: "" });
-    }, 700);
+    } catch {
+      toast.error(
+        "Sorry, the message could not be sent. Please email youstenasalah123@gmail.com directly.",
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
