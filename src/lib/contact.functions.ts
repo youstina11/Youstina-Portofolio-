@@ -15,11 +15,20 @@ const escapeHtml = (value: string) =>
     .replace(/"/g, "&quot;");
 
 export const sendContactMessage = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => ContactSchema.parse(data))
+  .inputValidator((data: unknown) => data as unknown)
   .handler(async ({ data }) => {
+    const parsed = ContactSchema.safeParse(data);
+    if (!parsed.success) {
+      return {
+        ok: false as const,
+        error: "Please fill in your name, a valid email, and a short message.",
+      };
+    }
+    const payload = parsed.data;
+
     const apiKey = process.env["RESEND_API_KEY"];
     if (!apiKey) {
-      throw new Error("Email service is not configured yet.");
+      return { ok: false as const, error: "Email service is not configured yet." };
     }
 
     const response = await fetch("https://api.resend.com/emails", {
@@ -31,14 +40,14 @@ export const sendContactMessage = createServerFn({ method: "POST" })
       body: JSON.stringify({
         from: "Portfolio Contact <onboarding@resend.dev>",
         to: ["youstenasalah123@gmail.com"],
-        reply_to: data.email,
-        subject: `New portfolio message from ${data.name}`,
+        reply_to: payload.email,
+        subject: `New portfolio message from ${payload.name}`,
         html: `
           <h2>New message from your portfolio</h2>
-          <p><strong>Name:</strong> ${escapeHtml(data.name)}</p>
-          <p><strong>Email:</strong> ${escapeHtml(data.email)}</p>
+          <p><strong>Name:</strong> ${escapeHtml(payload.name)}</p>
+          <p><strong>Email:</strong> ${escapeHtml(payload.email)}</p>
           <p><strong>Message:</strong></p>
-          <p>${escapeHtml(data.message).replace(/\n/g, "<br/>")}</p>
+          <p>${escapeHtml(payload.message).replace(/\n/g, "<br/>")}</p>
         `,
       }),
     });
@@ -46,8 +55,11 @@ export const sendContactMessage = createServerFn({ method: "POST" })
     if (!response.ok) {
       const body = await response.text();
       console.error(`Resend request failed [${response.status}]: ${body}`);
-      throw new Error(`Could not send the message [${response.status}].`);
+      return {
+        ok: false as const,
+        error: "The email service rejected the message. Please try again later.",
+      };
     }
 
-    return { ok: true as const };
+    return { ok: true as const, error: null };
   });
