@@ -35,11 +35,22 @@ function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const message = form.message.trim();
+    if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || message.length < 5) {
+      toast.error("Please add your name, a valid email, and a short message.");
+      return;
+    }
     setSending(true);
     try {
-      await send({ data: form });
-      toast.success("Thanks! Your message is on its way — I'll reply soon.");
-      setForm({ name: "", email: "", message: "" });
+      const result = await send({ data: { name, email, message } });
+      if (result?.ok) {
+        toast.success("Thanks! Your message is on its way — I'll reply soon.");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        toast.error(result?.error ?? "Could not send the message.");
+      }
     } catch {
       toast.error(
         "Sorry, the message could not be sent. Please email youstenasalah123@gmail.com directly.",
