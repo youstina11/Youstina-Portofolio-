@@ -39,7 +39,7 @@ function Index() {
       />
       <div className="space-y-20">
       {/* Hero */}
-      <Reveal id="hero" as="section" className="grid items-center gap-10 sm:grid-cols-5">
+      <Reveal id="hero" as="section" className="scroll-mt-28 grid items-center gap-10 sm:grid-cols-5">
         <div className="sm:col-span-3">
           <div className="fade-up inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
@@ -95,7 +95,7 @@ function Index() {
       </Reveal>
 
       {/* About */}
-      <Reveal id="about" as="section">
+      <Reveal id="about" as="section" className="scroll-mt-28">
         <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground">
           About
         </h2>
@@ -116,7 +116,7 @@ function Index() {
       </Reveal>
 
       {/* Focus areas */}
-      <Reveal id="what-i-do" as="section">
+      <Reveal id="what-i-do" as="section" className="scroll-mt-28">
         <h2 className="fade-up font-display text-2xl font-semibold tracking-tight text-foreground">
           What I do
         </h2>
@@ -161,7 +161,7 @@ function Index() {
       </Reveal>
 
       {/* Selected work teaser */}
-      <Reveal id="selected-work" as="section">
+      <Reveal id="selected-work" as="section" className="scroll-mt-28">
         <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground">
           Selected work
         </h2>
