@@ -155,7 +155,7 @@ function ContactPage() {
                 LinkedIn
               </a>
               <a
-                href="https://github.com/YoustinaSalah"
+                href="https://github.com/youstina11"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
