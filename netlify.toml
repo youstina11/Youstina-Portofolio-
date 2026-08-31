@@ -1,0 +1,13 @@
+# Netlify deployment config for the TanStack Start portfolio.
+[build]
+  command = "npm run build"
+  publish = "dist/client"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA/route fallback so deep links work.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

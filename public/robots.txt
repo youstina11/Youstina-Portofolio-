@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://my-spotlight-showcase-016.lovable.app/sitemap.xml
