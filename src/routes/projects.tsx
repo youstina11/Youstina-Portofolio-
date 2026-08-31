@@ -1,6 +1,8 @@
 import { Reveal } from "@/components/Reveal";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Github, Trophy, ExternalLink } from "lucide-react";
+import { Github, Trophy, ExternalLink, Search, X } from "lucide-react";
+import { useMemo, useState } from "react";
+
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
