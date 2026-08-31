@@ -75,3 +75,7 @@ src/
 Any host that supports a TanStack Start / Vite build works. Run
 `npm run build` and deploy the generated output, making sure `RESEND_API_KEY`
 is set as a server environment variable.
+
+## Deployment
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for step-by-step Vercel, Netlify, and Node hosting instructions (`vercel.json` and `netlify.toml` are included).

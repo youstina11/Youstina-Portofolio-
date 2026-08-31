@@ -1,6 +1,8 @@
 import { Reveal } from "@/components/Reveal";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Github, Trophy, ExternalLink } from "lucide-react";
+import { Github, Trophy, ExternalLink, Search, X } from "lucide-react";
+import { useMemo, useState } from "react";
+
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -19,7 +21,10 @@ export const Route = createFileRoute("/projects")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://my-spotlight-showcase-016.lovable.app/projects" },
+      { property: "og:site_name", content: "Youstina Salah Portfolio" },
     ],
+    links: [{ rel: "canonical", href: "https://my-spotlight-showcase-016.lovable.app/projects" }],
   }),
   component: ProjectsPage,
 });
@@ -130,7 +135,36 @@ const projects: {
   },
 ];
 
+const allTypes = Array.from(
+  new Set(projects.flatMap((p) => p.tag.split("·").map((t) => t.trim()))),
+).sort();
+
+const allTech = Array.from(new Set(projects.flatMap((p) => p.stack))).sort((a, b) =>
+  a.localeCompare(b),
+);
+
 function ProjectsPage() {
+  const [query, setQuery] = useState("");
+  const [type, setType] = useState<string | null>(null);
+  const [tech, setTech] = useState<string | null>(null);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return projects.filter((p) => {
+      const matchesQuery =
+        !q ||
+        p.name.toLowerCase().includes(q) ||
+        p.description.toLowerCase().includes(q) ||
+        p.tag.toLowerCase().includes(q) ||
+        p.stack.some((s) => s.toLowerCase().includes(q));
+      const matchesType = !type || p.tag.toLowerCase().includes(type.toLowerCase());
+      const matchesTech = !tech || p.stack.includes(tech);
+      return matchesQuery && matchesType && matchesTech;
+    });
+  }, [query, type, tech]);
+
+  const hasFilters = Boolean(query || type || tech);
+
   return (
     <div className="content-fade-in">
       <Reveal as="header" className="mb-10">
@@ -143,8 +177,87 @@ function ProjectsPage() {
         </p>
       </Reveal>
 
+      <Reveal className="mb-8 space-y-4" delay={40}>
+        <div className="relative">
+          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search projects by name, technology, or keyword…"
+            aria-label="Search projects"
+            className="w-full rounded-lg border border-border bg-card py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          />
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="self-center text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Type
+          </span>
+          {allTypes.map((t) => (
+            <button
+              key={t}
+              onClick={() => setType(type === t ? null : t)}
+              aria-pressed={type === t}
+              className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
+                type === t
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground"
+              }`}
+            >
+              {t}
+            </button>
+          ))}
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="self-center text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Tech
+          </span>
+          {allTech.map((t) => (
+            <button
+              key={t}
+              onClick={() => setTech(tech === t ? null : t)}
+              aria-pressed={tech === t}
+              className={`rounded-md border px-2.5 py-1 text-xs font-medium transition-colors ${
+                tech === t
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border bg-muted text-muted-foreground hover:border-primary/40 hover:text-foreground"
+              }`}
+            >
+              {t}
+            </button>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-3">
+          <p className="text-sm text-muted-foreground">
+            Showing {filtered.length} of {projects.length} projects
+          </p>
+          {hasFilters && (
+            <button
+              onClick={() => {
+                setQuery("");
+                setType(null);
+                setTech(null);
+              }}
+              className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline"
+            >
+              <X className="h-3.5 w-3.5" /> Clear filters
+            </button>
+          )}
+        </div>
+      </Reveal>
+
+      {filtered.length === 0 && (
+        <p className="rounded-xl border border-border bg-card p-6 text-sm text-muted-foreground">
+          No projects match your search. Try a different keyword or clear the filters.
+        </p>
+      )}
+
       <Reveal className="grid gap-5 sm:grid-cols-2" delay={80}>
-        {projects.map((p, i) => (
+        {filtered.map((p, i) => (
+
           <article
             key={p.name}
             className="hover-scale fade-up group flex flex-col rounded-xl border border-border bg-card p-6 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
