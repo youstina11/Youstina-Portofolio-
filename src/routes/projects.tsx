@@ -19,7 +19,10 @@ export const Route = createFileRoute("/projects")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://my-spotlight-showcase-016.lovable.app/projects" },
+      { property: "og:site_name", content: "Youstina Salah Portfolio" },
     ],
+    links: [{ rel: "canonical", href: "https://my-spotlight-showcase-016.lovable.app/projects" }],
   }),
   component: ProjectsPage,
 });
