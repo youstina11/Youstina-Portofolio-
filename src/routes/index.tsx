@@ -46,11 +46,11 @@ function Index() {
         <div className="sm:col-span-3">
           <div className="fade-up inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
-            Open to full-stack & AI engineering roles
+            Full-Stack · AI Engineer · Data Analyst
           </div>
           <h1 className="fade-up mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-6xl" style={{ animationDelay: "80ms" }}>
             Hi, I'm Youstina.
-            <span className="text-gradient block">Full-Stack & AI Engineer.</span>
+            <span className="text-gradient block">AI Engineer & Data Analyst.</span>
           </h1>
           <p className="fade-up mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "160ms" }}>
             I build full-stack web applications and intelligent, data-driven systems —
