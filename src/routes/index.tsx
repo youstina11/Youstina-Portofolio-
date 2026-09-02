@@ -54,8 +54,11 @@ function Index() {
           </h1>
           <p className="fade-up mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "160ms" }}>
             I build full-stack web applications and intelligent, data-driven systems —
-            from .NET Core backends and React-style frontends to machine learning models,
-            RAG chatbots, and Power BI dashboards that turn raw data into decisions.
+            from .NET Core backends and React-style frontends to applied machine learning
+            models, RAG chatbots, and Power BI dashboards that turn raw data into decisions.
+            My focus is the AI and data field: training ML models with scikit-learn and
+            OpenCV, shipping generative AI via Gemini and Claude, and delivering analytics
+            that make data actually useful.
           </p>
           <div className="fade-up mt-8 flex flex-wrap gap-3" style={{ animationDelay: "240ms" }}>
             <Link
