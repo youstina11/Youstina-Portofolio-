@@ -42,8 +42,15 @@ function Index() {
       />
       <div className="space-y-20">
       {/* Hero */}
-      <Reveal id="hero" as="section" className="scroll-mt-28 grid items-center gap-10 sm:grid-cols-5">
+      <Reveal id="hero" as="section" className="relative scroll-mt-28 grid items-center gap-10 sm:grid-cols-5">
+        {/* animated pastel background blobs */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-visible">
+          <div className="blob-pink absolute -left-16 -top-16 h-56 w-56 rounded-full opacity-70" />
+          <div className="blob-butter absolute -right-10 top-24 h-64 w-64 rounded-full opacity-60" />
+          <div className="blob-pink absolute bottom-0 left-1/3 h-40 w-40 rounded-full opacity-50" />
+        </div>
         <div className="sm:col-span-3">
+
           <div className="fade-up inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
             Full-Stack · AI Engineer · Data Analyst
