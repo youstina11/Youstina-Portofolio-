@@ -89,14 +89,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Youstina Salah — Full-Stack & AI Engineer" },
+      { title: "Youstina Salah — AI Engineer & Data Analyst" },
       {
         name: "description",
         content:
           "Youstina Salah Nathan — full-stack developer and AI engineer building data-driven applications with .NET Core, Python, and machine learning.",
       },
       { name: "author", content: "Youstina Salah Nathan" },
-      { property: "og:title", content: "Youstina Salah — Full-Stack & AI Engineer" },
+      { property: "og:title", content: "Youstina Salah — AI Engineer & Data Analyst" },
       {
         property: "og:description",
         content:
@@ -122,7 +122,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Person",
           name: "Youstina Salah Nathan",
-          jobTitle: "Full-Stack & AI Engineer",
+          jobTitle: "AI Engineer & Data Analyst",
           email: "mailto:youstenasalah123@gmail.com",
           url: "https://my-spotlight-showcase-016.lovable.app",
           address: { "@type": "PostalAddress", addressLocality: "Assiut", addressCountry: "EG" },
@@ -176,7 +176,7 @@ function Sidebar() {
           Youstina Salah
         </h1>
         <p className="mt-1 text-sm font-medium text-sidebar-primary">
-          Full-Stack & AI Engineer
+          AI Engineer & Data Analyst
         </p>
         <p className="mt-2 inline-flex items-center gap-1 text-xs text-sidebar-foreground/75">
           <MapPin className="h-3 w-3" /> Assiut, Egypt
