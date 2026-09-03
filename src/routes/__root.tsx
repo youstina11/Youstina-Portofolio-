@@ -93,14 +93,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Youstina Salah Nathan — full-stack developer and AI engineer building data-driven applications with .NET Core, Python, and machine learning.",
+          "Youstina Salah Nathan — AI engineer and data analyst building data-driven applications with Python, machine learning, and analytics.",
       },
       { name: "author", content: "Youstina Salah Nathan" },
       { property: "og:title", content: "Youstina Salah — AI Engineer & Data Analyst" },
       {
         property: "og:description",
         content:
-          "Full-stack developer and AI engineer building data-driven applications with .NET Core, Python, and machine learning.",
+          "AI engineer and data analyst building data-driven applications with Python, machine learning, and analytics.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
