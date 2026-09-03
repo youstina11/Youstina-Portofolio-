@@ -181,6 +181,70 @@
   color: transparent;
 }
 
+/* Animated pastel blobs */
+@utility blob-pink {
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--accent) 90%, transparent), transparent 72%);
+  filter: blur(28px);
+  animation: blob-drift 14s ease-in-out infinite;
+}
+
+@utility blob-butter {
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--secondary) 95%, transparent), transparent 72%);
+  filter: blur(30px);
+  animation: blob-drift 18s ease-in-out infinite reverse;
+}
+
+@keyframes blob-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(18px, -22px, 0) scale(1.08); }
+  66% { transform: translate3d(-16px, 14px, 0) scale(0.95); }
+}
+
+/* Slow zoom + gentle tilt for photos */
+@utility photo-anim {
+  overflow: hidden;
+  & img {
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: photo-pan 18s ease-in-out infinite alternate;
+  }
+  &:hover img {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes photo-pan {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+/* Rotating pastel ring behind a photo */
+@utility photo-ring {
+  background: conic-gradient(
+    from 0deg,
+    color-mix(in oklab, var(--accent) 90%, transparent),
+    color-mix(in oklab, var(--secondary) 90%, transparent),
+    color-mix(in oklab, var(--primary) 40%, transparent),
+    color-mix(in oklab, var(--accent) 90%, transparent)
+  );
+  filter: blur(10px);
+  animation: spin-slow 22s linear infinite;
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob-pink,
+  .blob-butter,
+  .photo-ring,
+  .photo-anim img {
+    animation: none;
+  }
+}
+
+
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
