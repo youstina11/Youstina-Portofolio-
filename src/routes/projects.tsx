@@ -42,7 +42,7 @@ const projects: {
     name: "PostpartumRAG — Maternal Mental Health Chatbot",
     tag: "RAG · GenAI",
     year: "Aug 2026",
-    award: "Top 3 at national hackathon",
+    award: "Top 2 at national hackathon",
     description:
       "A grounded, citation-traceable RAG chatbot supporting maternal mental health guidance. Section-aware chunking of WHO, mhGAP, and NICE CG192 clinical sources with Gemini embeddings and Supabase vector search.",
     stack: ["Angular", "Express.js", "MongoDB", "Python", "Gemini", "Supabase"],
