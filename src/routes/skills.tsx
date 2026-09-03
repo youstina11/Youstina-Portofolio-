@@ -86,7 +86,7 @@ const experience = [
     company: "Hackathon · Orange Digital Center, ITIDA, TIEC, Creativa",
     period: "Aug 2026",
     summary:
-      "Built a grounded, citation-traceable RAG chatbot; placed among the Top 3 teams and received a certificate of achievement.",
+      "Built a grounded, citation-traceable RAG chatbot; placed among the Top 2 teams and received a certificate of achievement.",
     points: [
       "Section-aware chunking of WHO, mhGAP, and NICE CG192 clinical sources.",
       "Gemini embeddings + Supabase vector search across Angular/Express/MongoDB/Python stack.",

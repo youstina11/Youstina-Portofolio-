@@ -189,7 +189,7 @@ function Index() {
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {[
             { name: "Jobify — AI Employment", tag: "Full-Stack · AI" },
-            { name: "PostpartumRAG Chatbot", tag: "RAG · Top 3" },
+            { name: "PostpartumRAG Chatbot", tag: "RAG · Top 2" },
             { name: "E-Commerce .NET App", tag: "Full-Stack" },
           ].map((p) => (
             <Link
