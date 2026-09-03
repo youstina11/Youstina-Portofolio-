@@ -165,7 +165,7 @@ function Sidebar() {
           <div className="halo-glow absolute inset-0 -m-3 rounded-full" />
           <div className="ring-pulse relative h-28 w-28 overflow-hidden rounded-full border-2 border-sidebar-primary/60 bg-sidebar-accent shadow-xl">
             <img
-              src="/ChatGPT Image Jun 15, 2026, 05_07_17 PM.png"
+              src={portrait.url}
               alt="Youstina Salah Nathan"
               className="h-full w-full object-cover object-top"
             />
