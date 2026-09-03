@@ -86,14 +86,16 @@ function Index() {
 
         {/* Catchy photo card with floating badges */}
         <div className="relative sm:col-span-2">
+          <div className="photo-ring absolute -inset-5 mx-auto max-w-[300px] rounded-[2rem] opacity-70" />
           <div className="halo-glow absolute -inset-6 rounded-[2rem]" />
-          <div className="fade-up relative mx-auto max-w-[260px] overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-2xl shadow-primary/10" style={{ animationDelay: "200ms" }}>
+          <div className="photo-anim fade-up relative mx-auto max-w-[260px] overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-2xl shadow-primary/10" style={{ animationDelay: "200ms" }}>
             <img
               src={portrait.url}
               alt="Youstina Salah Nathan"
               className="aspect-[3/4] w-full object-cover object-top"
             />
           </div>
+
           {/* floating skill badges */}
           <div className="float-soft absolute -left-4 top-6 hidden rounded-xl border border-border bg-card px-3 py-2 text-xs font-semibold text-foreground shadow-lg sm:flex sm:items-center sm:gap-1.5">
             <Code2 className="h-3.5 w-3.5 text-primary" /> .NET Core
