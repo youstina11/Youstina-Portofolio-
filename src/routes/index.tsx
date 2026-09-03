@@ -90,7 +90,7 @@ function Index() {
           <div className="halo-glow absolute -inset-6 rounded-[2rem]" />
           <div className="photo-anim fade-up relative mx-auto max-w-[260px] overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-2xl shadow-primary/10" style={{ animationDelay: "200ms" }}>
             <img
-              src={portrait.url}
+              src="/profile.jpg"
               alt="Youstina Salah Nathan"
               className="aspect-[3/4] w-full object-cover object-top"
             />
