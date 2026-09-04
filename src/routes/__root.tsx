@@ -14,7 +14,7 @@ import { Github, Linkedin, Mail, Menu, X, MapPin, Download } from "lucide-react"
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
-import portrait from "@/assets/youstina-portrait.png.asset.json";
+const portrait = { url: "/youstina-portrait.png" };
 
 const navItems = [
   { label: "Home", to: "/" },

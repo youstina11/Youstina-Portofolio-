@@ -2,7 +2,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionNav } from "@/components/SectionNav";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Sparkles, Code2, Brain, BarChart3 } from "lucide-react";
-import portrait from "@/assets/youstina-portrait.png.asset.json";
+const portrait = { url: "/youstina-portrait.png" };
 
 export const Route = createFileRoute("/")({
   head: () => ({
