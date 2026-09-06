@@ -116,6 +116,7 @@ const projects: {
     description:
       "An interactive Power BI dashboard applying data-visualization best practices to breast cancer health data — surfacing diagnosis trends, risk factors, and key patient metrics to support early-detection insights.",
     stack: ["Power BI", "Excel"],
+    repo: "https://github.com/youstina11/-Breast-Cancer-Health-Analysis-Dashboard",
   },
   {
     name: "Library Database Management System",
