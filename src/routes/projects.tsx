@@ -1,7 +1,10 @@
 import { Reveal } from "@/components/Reveal";
 import { createFileRoute } from "@tanstack/react-router";
-import { Github, Trophy, ExternalLink, Search, X } from "lucide-react";
+import { Github, Trophy, ExternalLink, Search, X, Link2 } from "lucide-react";
 import { useMemo, useState } from "react";
+import breastCancerImg from "@/assets/projects/breast-cancer-dashboard.png.asset.json";
+import jobifyImg from "@/assets/projects/jobify-home.png.asset.json";
+import postpartumImg from "@/assets/projects/postpartum-home.png.asset.json";
 
 
 export const Route = createFileRoute("/projects")({
@@ -37,6 +40,8 @@ const projects: {
   description: string;
   stack: string[];
   repo?: string;
+  image?: string;
+  liveUrl?: string;
 }[] = [
   {
     name: "PostpartumRAG — Maternal Mental Health Chatbot",
@@ -47,6 +52,8 @@ const projects: {
       "A grounded, citation-traceable RAG chatbot supporting maternal mental health guidance. Section-aware chunking of WHO, mhGAP, and NICE CG192 clinical sources with Gemini embeddings and Supabase vector search.",
     stack: ["Angular", "Express.js", "MongoDB", "Python", "Gemini", "Supabase"],
     repo: "https://github.com/youstina11/-PostpartumRAG-Mental-Health-Care-Evidence-Grounded-AI-Healthcare-Assistant",
+    image: postpartumImg.url,
+    liveUrl: "https://postpartum-frontend.onrender.com/",
   },
   {
     name: "Jobify — AI-Powered Employment Platform",
@@ -56,6 +63,8 @@ const projects: {
       "Owned the AI/Python backend across a 3-role team. Delivered an AI Interview System (OpenCV, MediaPipe, Whisper, Claude & Gemini APIs), a Flask CV Generator with model fallback chains, and a CV Analyzer (TF-IDF, Cosine & Jaccard similarity). Defended the full architecture to academic and technical stakeholders.",
     stack: ["Python", "Flask", "OpenCV", "MediaPipe", "Whisper", "Claude", "Gemini"],
     repo: "https://github.com/youstina11/Graduation-Project",
+    image: jobifyImg.url,
+    liveUrl: "https://grain-speed-08791955.figma.site/",
   },
   {
     name: "Breast Cancer Health Dashboard",
@@ -65,6 +74,7 @@ const projects: {
       "An interactive Power BI dashboard applying data-visualization best practices to breast cancer health data — surfacing diagnosis trends, risk factors, and key patient metrics to support early-detection insights.",
     stack: ["Power BI", "Excel"],
     repo: "https://github.com/youstina11/-Breast-Cancer-Health-Analysis-Dashboard",
+    image: breastCancerImg.url,
   },
   {
     name: "Iris Flower Classification",
@@ -253,56 +263,84 @@ function ProjectsPage() {
 
           <article
             key={p.name}
-            className="hover-scale fade-up group flex flex-col rounded-xl border border-border bg-card p-6 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
+            className="hover-scale fade-up group flex flex-col overflow-hidden rounded-xl border border-border bg-card hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
             style={{ animationDelay: `${i * 70}ms` }}
           >
-            <div className="flex items-start justify-between gap-3">
-              <div>
-                <div className="text-xs font-medium text-primary">{p.tag}</div>
-                <h2 className="mt-1.5 font-display text-lg font-semibold text-foreground">
-                  {p.name}
-                </h2>
-              </div>
-              <span className="text-xs text-muted-foreground">{p.year}</span>
-            </div>
-            {p.award && (
-              <div className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-md bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
-                <Trophy className="h-3.5 w-3.5" /> {p.award}
-              </div>
-            )}
-            <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-              {p.description}
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {p.stack.map((s) => (
-                <span
-                  key={s}
-                  className="rounded-md border border-border bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground"
-                >
-                  {s}
-                </span>
-              ))}
-            </div>
-            <div className="mt-5 flex items-center gap-4 border-t border-border pt-4">
+            {p.image && (
               <a
-                href={p.repo ?? "https://github.com/youstina11"}
+                href={p.liveUrl ?? p.repo ?? "https://github.com/youstina11"}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
+                className="block overflow-hidden border-b border-border bg-muted"
+                aria-label={`${p.name} preview`}
               >
-                <Github className="h-3.5 w-3.5" />
-                {p.repo ? "View on GitHub" : "GitHub profile"}
+                <img
+                  src={p.image}
+                  alt={`${p.name} preview`}
+                  loading="lazy"
+                  className="h-44 w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
               </a>
-              {p.repo && (
+            )}
+            <div className="flex flex-1 flex-col p-6">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <div className="text-xs font-medium text-primary">{p.tag}</div>
+                  <h2 className="mt-1.5 font-display text-lg font-semibold text-foreground">
+                    {p.name}
+                  </h2>
+                </div>
+                <span className="text-xs text-muted-foreground">{p.year}</span>
+              </div>
+              {p.award && (
+                <div className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-md bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
+                  <Trophy className="h-3.5 w-3.5" /> {p.award}
+                </div>
+              )}
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                {p.description}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {p.stack.map((s) => (
+                  <span
+                    key={s}
+                    className="rounded-md border border-border bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-5 flex items-center gap-4 border-t border-border pt-4">
                 <a
-                  href={`${p.repo}#readme`}
+                  href={p.repo ?? "https://github.com/youstina11"}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
                 >
-                  Details <ExternalLink className="h-3.5 w-3.5" />
+                  <Github className="h-3.5 w-3.5" />
+                  {p.repo ? "View on GitHub" : "GitHub profile"}
                 </a>
-              )}
+                {p.repo && (
+                  <a
+                    href={`${p.repo}#readme`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    Details <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                )}
+                {p.liveUrl && (
+                  <a
+                    href={p.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary transition-colors hover:underline"
+                  >
+                    <Link2 className="h-3.5 w-3.5" /> Live Demo
+                  </a>
+                )}
+              </div>
             </div>
           </article>
         ))}
