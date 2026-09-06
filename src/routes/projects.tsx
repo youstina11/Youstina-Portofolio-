@@ -1,7 +1,10 @@
 import { Reveal } from "@/components/Reveal";
 import { createFileRoute } from "@tanstack/react-router";
-import { Github, Trophy, ExternalLink, Search, X } from "lucide-react";
+import { Github, Trophy, ExternalLink, Search, X, Link2 } from "lucide-react";
 import { useMemo, useState } from "react";
+import breastCancerImg from "@/assets/projects/breast-cancer-dashboard.png.asset.json";
+import jobifyImg from "@/assets/projects/jobify-home.png.asset.json";
+import postpartumImg from "@/assets/projects/postpartum-home.png.asset.json";
 
 
 export const Route = createFileRoute("/projects")({
@@ -37,6 +40,8 @@ const projects: {
   description: string;
   stack: string[];
   repo?: string;
+  image?: string;
+  liveUrl?: string;
 }[] = [
   {
     name: "PostpartumRAG — Maternal Mental Health Chatbot",
