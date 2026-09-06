@@ -263,56 +263,84 @@ function ProjectsPage() {
 
           <article
             key={p.name}
-            className="hover-scale fade-up group flex flex-col rounded-xl border border-border bg-card p-6 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
+            className="hover-scale fade-up group flex flex-col overflow-hidden rounded-xl border border-border bg-card hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
             style={{ animationDelay: `${i * 70}ms` }}
           >
-            <div className="flex items-start justify-between gap-3">
-              <div>
-                <div className="text-xs font-medium text-primary">{p.tag}</div>
-                <h2 className="mt-1.5 font-display text-lg font-semibold text-foreground">
-                  {p.name}
-                </h2>
-              </div>
-              <span className="text-xs text-muted-foreground">{p.year}</span>
-            </div>
-            {p.award && (
-              <div className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-md bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
-                <Trophy className="h-3.5 w-3.5" /> {p.award}
-              </div>
-            )}
-            <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-              {p.description}
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {p.stack.map((s) => (
-                <span
-                  key={s}
-                  className="rounded-md border border-border bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground"
-                >
-                  {s}
-                </span>
-              ))}
-            </div>
-            <div className="mt-5 flex items-center gap-4 border-t border-border pt-4">
+            {p.image && (
               <a
-                href={p.repo ?? "https://github.com/youstina11"}
+                href={p.liveUrl ?? p.repo ?? "https://github.com/youstina11"}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
+                className="block overflow-hidden border-b border-border bg-muted"
+                aria-label={`${p.name} preview`}
               >
-                <Github className="h-3.5 w-3.5" />
-                {p.repo ? "View on GitHub" : "GitHub profile"}
+                <img
+                  src={p.image}
+                  alt={`${p.name} preview`}
+                  loading="lazy"
+                  className="h-44 w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
               </a>
-              {p.repo && (
+            )}
+            <div className="flex flex-1 flex-col p-6">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <div className="text-xs font-medium text-primary">{p.tag}</div>
+                  <h2 className="mt-1.5 font-display text-lg font-semibold text-foreground">
+                    {p.name}
+                  </h2>
+                </div>
+                <span className="text-xs text-muted-foreground">{p.year}</span>
+              </div>
+              {p.award && (
+                <div className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-md bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
+                  <Trophy className="h-3.5 w-3.5" /> {p.award}
+                </div>
+              )}
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                {p.description}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {p.stack.map((s) => (
+                  <span
+                    key={s}
+                    className="rounded-md border border-border bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-5 flex items-center gap-4 border-t border-border pt-4">
                 <a
-                  href={`${p.repo}#readme`}
+                  href={p.repo ?? "https://github.com/youstina11"}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
                 >
-                  Details <ExternalLink className="h-3.5 w-3.5" />
+                  <Github className="h-3.5 w-3.5" />
+                  {p.repo ? "View on GitHub" : "GitHub profile"}
                 </a>
-              )}
+                {p.repo && (
+                  <a
+                    href={`${p.repo}#readme`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    Details <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                )}
+                {p.liveUrl && (
+                  <a
+                    href={p.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary transition-colors hover:underline"
+                  >
+                    <Link2 className="h-3.5 w-3.5" /> Live Demo
+                  </a>
+                )}
+              </div>
             </div>
           </article>
         ))}
