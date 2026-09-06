@@ -52,6 +52,8 @@ const projects: {
       "A grounded, citation-traceable RAG chatbot supporting maternal mental health guidance. Section-aware chunking of WHO, mhGAP, and NICE CG192 clinical sources with Gemini embeddings and Supabase vector search.",
     stack: ["Angular", "Express.js", "MongoDB", "Python", "Gemini", "Supabase"],
     repo: "https://github.com/youstina11/-PostpartumRAG-Mental-Health-Care-Evidence-Grounded-AI-Healthcare-Assistant",
+    image: postpartumImg.url,
+    liveUrl: "https://postpartum-frontend.onrender.com/",
   },
   {
     name: "Jobify — AI-Powered Employment Platform",
@@ -61,6 +63,8 @@ const projects: {
       "Owned the AI/Python backend across a 3-role team. Delivered an AI Interview System (OpenCV, MediaPipe, Whisper, Claude & Gemini APIs), a Flask CV Generator with model fallback chains, and a CV Analyzer (TF-IDF, Cosine & Jaccard similarity). Defended the full architecture to academic and technical stakeholders.",
     stack: ["Python", "Flask", "OpenCV", "MediaPipe", "Whisper", "Claude", "Gemini"],
     repo: "https://github.com/youstina11/Graduation-Project",
+    image: jobifyImg.url,
+    liveUrl: "https://grain-speed-08791955.figma.site/",
   },
   {
     name: "Breast Cancer Health Dashboard",
@@ -70,6 +74,7 @@ const projects: {
       "An interactive Power BI dashboard applying data-visualization best practices to breast cancer health data — surfacing diagnosis trends, risk factors, and key patient metrics to support early-detection insights.",
     stack: ["Power BI", "Excel"],
     repo: "https://github.com/youstina11/-Breast-Cancer-Health-Analysis-Dashboard",
+    image: breastCancerImg.url,
   },
   {
     name: "Iris Flower Classification",
