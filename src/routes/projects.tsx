@@ -58,12 +58,13 @@ const projects: {
     repo: "https://github.com/youstina11/Graduation-Project",
   },
   {
-    name: "E-Commerce Web Application",
-    tag: "Full-Stack · .NET",
-    year: "2025",
+    name: "Breast Cancer Health Dashboard",
+    tag: "BI · Visualization",
+    year: "2024",
     description:
-      "Full-stack ASP.NET Core app (MVC storefront + Web API) with EF Core/SQL Server data layer, user authentication and role-based access, product catalog, cart, and checkout flow. Built as the capstone of a .NET Core diploma.",
-    stack: ["ASP.NET Core", "EF Core", "SQL Server", "MVC", "Web API"],
+      "An interactive Power BI dashboard applying data-visualization best practices to breast cancer health data — surfacing diagnosis trends, risk factors, and key patient metrics to support early-detection insights.",
+    stack: ["Power BI", "Excel"],
+    repo: "https://github.com/youstina11/-Breast-Cancer-Health-Analysis-Dashboard",
   },
   {
     name: "Iris Flower Classification",
@@ -102,21 +103,12 @@ const projects: {
     repo: "https://github.com/youstina11/EDA-mini-project-",
   },
   {
-    name: "Data Analysis Capstone",
-    tag: "Data · BI",
-    year: "2024",
+    name: "Network Infrastructure Design",
+    tag: "Networking",
+    year: "2023",
     description:
-      "Cleaned and validated 50,000+ records, built a data model and interactive Power BI dashboard with 8+ KPI visualizations, and wrote 20+ advanced SQL queries (JOINs, CTEs, window functions) for performance reporting.",
-    stack: ["Power BI", "SQL", "Pandas", "NumPy", "DAX"],
-  },
-  {
-    name: "Breast Cancer Health Dashboard",
-    tag: "BI · Visualization",
-    year: "2024",
-    description:
-      "An interactive Power BI dashboard applying data-visualization best practices to breast cancer health data — surfacing diagnosis trends, risk factors, and key patient metrics to support early-detection insights.",
-    stack: ["Power BI", "Excel"],
-    repo: "https://github.com/youstina11/-Breast-Cancer-Health-Analysis-Dashboard",
+      "Designed and simulated a small business network in Cisco Packet Tracer applying TCP/IP, subnetting, and VLAN configuration across 3 simulated subnets.",
+    stack: ["Cisco Packet Tracer", "TCP/IP", "VLAN"],
   },
   {
     name: "Library Database Management System",
@@ -127,12 +119,12 @@ const projects: {
     stack: ["Oracle", "SQL", "Stored Procedures"],
   },
   {
-    name: "Network Infrastructure Design",
-    tag: "Networking",
-    year: "2023",
+    name: "Data Analysis Capstone",
+    tag: "Data · BI",
+    year: "2024",
     description:
-      "Designed and simulated a small business network in Cisco Packet Tracer applying TCP/IP, subnetting, and VLAN configuration across 3 simulated subnets.",
-    stack: ["Cisco Packet Tracer", "TCP/IP", "VLAN"],
+      "Cleaned and validated 50,000+ records, built a data model and interactive Power BI dashboard with 8+ KPI visualizations, and wrote 20+ advanced SQL queries (JOINs, CTEs, window functions) for performance reporting.",
+    stack: ["Power BI", "SQL", "Pandas", "NumPy", "DAX"],
   },
 ];
 
