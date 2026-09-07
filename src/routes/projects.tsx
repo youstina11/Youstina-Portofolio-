@@ -7,6 +7,7 @@ import irisImg from "@/assets/projects/iris-flower.png.asset.json";
 import jobifyImg from "@/assets/projects/jobify-home.png.asset.json";
 import postpartumImg from "@/assets/projects/postpartum-home.png.asset.json";
 import unemploymentImg from "@/assets/projects/unemployment-rate-analysis.png.asset.json";
+import carPriceImg from "@/assets/projects/car-price-prediction.png.asset.json";
 
 
 export const Route = createFileRoute("/projects")({
@@ -106,6 +107,7 @@ const projects: {
       "Machine learning pipeline predicting car prices: data preprocessing, EDA, regression modeling, feature importance analysis, and model evaluation.",
     stack: ["Python", "scikit-learn", "Pandas", "NumPy"],
     repo: "https://github.com/youstina11/Task-3-Car-price-prediction",
+    image: carPriceImg.url,
   },
   {
     name: "End-to-End Data Pipeline — EDA & SQLite",
