@@ -118,6 +118,7 @@ const projects: {
       "A mini project building an end-to-end data pipeline: Python exploratory analysis integrated with a SQLite database for structured querying and reporting.",
     stack: ["Python", "SQLite", "Pandas", "Jupyter"],
     repo: "https://github.com/youstina11/EDA-mini-project-",
+    image: edaMiniImg.url,
   },
   {
     name: "Network Infrastructure Design",
