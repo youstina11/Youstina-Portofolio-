@@ -85,6 +85,7 @@ const projects: {
       "A Random Forest classifier that identifies Iris species (Setosa, Versicolor, Virginica) with full data exploration, model training, and evaluation in a documented notebook.",
     stack: ["Python", "scikit-learn", "Pandas", "Matplotlib"],
     repo: "https://github.com/youstina11/Task1-Iris-Flower-Classification-",
+    image: irisImg.url,
   },
   {
     name: "Unemployment Rate Analysis",
