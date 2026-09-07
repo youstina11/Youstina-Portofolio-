@@ -8,6 +8,7 @@ import jobifyImg from "@/assets/projects/jobify-home.png.asset.json";
 import postpartumImg from "@/assets/projects/postpartum-home.png.asset.json";
 import unemploymentImg from "@/assets/projects/unemployment-rate-analysis.png.asset.json";
 import carPriceImg from "@/assets/projects/car-price-prediction.png.asset.json";
+import edaMiniImg from "@/assets/projects/eda-mini-project.png.asset.json";
 
 
 export const Route = createFileRoute("/projects")({
