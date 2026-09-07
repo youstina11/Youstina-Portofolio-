@@ -6,6 +6,7 @@ import breastCancerImg from "@/assets/projects/breast-cancer-dashboard.png.asset
 import irisImg from "@/assets/projects/iris-flower.png.asset.json";
 import jobifyImg from "@/assets/projects/jobify-home.png.asset.json";
 import postpartumImg from "@/assets/projects/postpartum-home.png.asset.json";
+import unemploymentImg from "@/assets/projects/unemployment-rate-analysis.png.asset.json";
 
 
 export const Route = createFileRoute("/projects")({
@@ -95,6 +96,7 @@ const projects: {
       "Exploratory data analysis of unemployment trends in India — regional patterns, urban vs. rural differences, seasonality, and the impact of COVID-19, visualized end to end.",
     stack: ["Python", "Pandas", "Seaborn", "Jupyter"],
     repo: "https://github.com/youstina11/Task-2-Unemployment-Rate-Analysis-",
+    image: unemploymentImg.url,
   },
   {
     name: "Car Price Prediction",
