@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Github, Trophy, ExternalLink, Search, X, Link2 } from "lucide-react";
 import { useMemo, useState } from "react";
 import breastCancerImg from "@/assets/projects/breast-cancer-dashboard.png.asset.json";
+import irisImg from "@/assets/projects/iris-flower.png.asset.json";
 import jobifyImg from "@/assets/projects/jobify-home.png.asset.json";
 import postpartumImg from "@/assets/projects/postpartum-home.png.asset.json";
 
@@ -84,6 +85,7 @@ const projects: {
       "A Random Forest classifier that identifies Iris species (Setosa, Versicolor, Virginica) with full data exploration, model training, and evaluation in a documented notebook.",
     stack: ["Python", "scikit-learn", "Pandas", "Matplotlib"],
     repo: "https://github.com/youstina11/Task1-Iris-Flower-Classification-",
+    image: irisImg.url,
   },
   {
     name: "Unemployment Rate Analysis",
