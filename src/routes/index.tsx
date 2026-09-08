@@ -7,17 +7,17 @@ const portrait = { url: "/youstina-portrait.png" };
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Youstina Salah — Full-Stack & AI Engineer" },
+      { title: "Youstina Salah — AI Engineer, ML Engineer & Data Analyst" },
       {
         name: "description",
         content:
-          "Youstina Salah Nathan — full-stack developer and AI engineer building data-driven applications with .NET Core, Python, and machine learning.",
+          "Youstina Salah Nathan — AI & Machine Learning Engineer and Data Science Analyst building data-driven applications, ML models, and analytics dashboards.",
       },
-      { property: "og:title", content: "Youstina Salah — Full-Stack & AI Engineer" },
+      { property: "og:title", content: "Youstina Salah — AI Engineer, ML Engineer & Data Analyst" },
       {
         property: "og:description",
         content:
-          "Full-stack developer and AI engineer building data-driven applications with .NET Core, Python, and machine learning.",
+          "AI & Machine Learning Engineer and Data Science Analyst building data-driven applications, ML models, and analytics dashboards.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -53,19 +53,19 @@ function Index() {
 
           <div className="fade-up inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
-            Full-Stack · AI Engineer · Data Analyst
+            AI Engineer · ML Engineer · Data Science & Analytics
           </div>
           <h1 className="fade-up mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-6xl" style={{ animationDelay: "80ms" }}>
             Hi, I'm Youstina.
-            <span className="text-gradient block">AI Engineer & Data Analyst.</span>
+            <span className="text-gradient block">AI & ML Engineer · Data Analyst.</span>
           </h1>
           <p className="fade-up mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "160ms" }}>
-            I build full-stack web applications and intelligent, data-driven systems —
-            from .NET Core backends and React-style frontends to applied machine learning
-            models, RAG chatbots, and Power BI dashboards that turn raw data into decisions.
-            My focus is the AI and data field: training ML models with scikit-learn and
-            OpenCV, shipping generative AI via Gemini and Claude, and delivering analytics
-            that make data actually useful.
+            I design and build intelligent, data-driven systems — from applied machine
+            learning models and RAG chatbots to analytics dashboards that turn raw data into
+            decisions. My focus spans data science and analytics, ML engineering, and AI
+            engineering: training models with scikit-learn and OpenCV, shipping generative AI
+            via Gemini and Claude, and delivering Power BI dashboards and SQL analytics that
+            make data actually useful.
           </p>
           <div className="fade-up mt-8 flex flex-wrap gap-3" style={{ animationDelay: "240ms" }}>
             <Link
@@ -138,24 +138,24 @@ function Index() {
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {[
             {
-              title: "Full-Stack Web",
-              icon: Code2,
-              body: "ASP.NET Core MVC + Web API, EF Core, SQL Server, RESTful design, auth, and checkout flows.",
-            },
-            {
-              title: "AI & Machine Learning",
-              icon: Brain,
-              body: "scikit-learn, OpenCV/MediaPipe, NLP, TF-IDF similarity, model evaluation, and RAG chatbots.",
-            },
-            {
-              title: "Generative AI",
-              icon: Sparkles,
-              body: "Google Gemini & Anthropic Claude APIs, OpenAI Whisper, prompt engineering, and model fallback chains.",
-            },
-            {
-              title: "Data & BI",
+              title: "Data Science & Analytics",
               icon: BarChart3,
-              body: "Power BI dashboards with 8+ KPIs, advanced SQL, Pandas/NumPy, ETL, and statistical analysis.",
+              body: "Power BI dashboards with 8+ KPIs, advanced SQL, Pandas/NumPy, ETL pipelines, statistical analysis, and data visualization.",
+            },
+            {
+              title: "Machine Learning Engineering",
+              icon: Brain,
+              body: "scikit-learn, OpenCV/MediaPipe, NLP, TF-IDF similarity, model evaluation, and end-to-end ML pipelines from data to deployment.",
+            },
+            {
+              title: "AI Engineering",
+              icon: Sparkles,
+              body: "RAG chatbots, Google Gemini & Anthropic Claude APIs, OpenAI Whisper, prompt engineering, and model fallback chains.",
+            },
+            {
+              title: "Full-Stack Development",
+              icon: Code2,
+              body: "ASP.NET Core MVC + Web API, EF Core, SQL Server, RESTful design, auth, and Python/Flask backends powering data apps.",
             },
           ].map((f, i) => (
             <div
