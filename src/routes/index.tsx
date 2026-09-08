@@ -138,24 +138,24 @@ function Index() {
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {[
             {
-              title: "Full-Stack Web",
-              icon: Code2,
-              body: "ASP.NET Core MVC + Web API, EF Core, SQL Server, RESTful design, auth, and checkout flows.",
-            },
-            {
-              title: "AI & Machine Learning",
-              icon: Brain,
-              body: "scikit-learn, OpenCV/MediaPipe, NLP, TF-IDF similarity, model evaluation, and RAG chatbots.",
-            },
-            {
-              title: "Generative AI",
-              icon: Sparkles,
-              body: "Google Gemini & Anthropic Claude APIs, OpenAI Whisper, prompt engineering, and model fallback chains.",
-            },
-            {
-              title: "Data & BI",
+              title: "Data Science & Analytics",
               icon: BarChart3,
-              body: "Power BI dashboards with 8+ KPIs, advanced SQL, Pandas/NumPy, ETL, and statistical analysis.",
+              body: "Power BI dashboards with 8+ KPIs, advanced SQL, Pandas/NumPy, ETL pipelines, statistical analysis, and data visualization.",
+            },
+            {
+              title: "Machine Learning Engineering",
+              icon: Brain,
+              body: "scikit-learn, OpenCV/MediaPipe, NLP, TF-IDF similarity, model evaluation, and end-to-end ML pipelines from data to deployment.",
+            },
+            {
+              title: "AI Engineering",
+              icon: Sparkles,
+              body: "RAG chatbots, Google Gemini & Anthropic Claude APIs, OpenAI Whisper, prompt engineering, and model fallback chains.",
+            },
+            {
+              title: "Full-Stack Development",
+              icon: Code2,
+              body: "ASP.NET Core MVC + Web API, EF Core, SQL Server, RESTful design, auth, and Python/Flask backends powering data apps.",
             },
           ].map((f, i) => (
             <div
