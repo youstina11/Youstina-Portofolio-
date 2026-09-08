@@ -7,17 +7,17 @@ const portrait = { url: "/youstina-portrait.png" };
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Youstina Salah — Full-Stack & AI Engineer" },
+      { title: "Youstina Salah — AI Engineer, ML Engineer & Data Analyst" },
       {
         name: "description",
         content:
-          "Youstina Salah Nathan — full-stack developer and AI engineer building data-driven applications with .NET Core, Python, and machine learning.",
+          "Youstina Salah Nathan — AI & Machine Learning Engineer and Data Science Analyst building data-driven applications, ML models, and analytics dashboards.",
       },
-      { property: "og:title", content: "Youstina Salah — Full-Stack & AI Engineer" },
+      { property: "og:title", content: "Youstina Salah — AI Engineer, ML Engineer & Data Analyst" },
       {
         property: "og:description",
         content:
-          "Full-stack developer and AI engineer building data-driven applications with .NET Core, Python, and machine learning.",
+          "AI & Machine Learning Engineer and Data Science Analyst building data-driven applications, ML models, and analytics dashboards.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
