@@ -53,19 +53,19 @@ function Index() {
 
           <div className="fade-up inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
-            Full-Stack · AI Engineer · Data Analyst
+            AI Engineer · ML Engineer · Data Science & Analytics
           </div>
           <h1 className="fade-up mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-6xl" style={{ animationDelay: "80ms" }}>
             Hi, I'm Youstina.
-            <span className="text-gradient block">AI Engineer & Data Analyst.</span>
+            <span className="text-gradient block">AI & ML Engineer · Data Analyst.</span>
           </h1>
           <p className="fade-up mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "160ms" }}>
-            I build full-stack web applications and intelligent, data-driven systems —
-            from .NET Core backends and React-style frontends to applied machine learning
-            models, RAG chatbots, and Power BI dashboards that turn raw data into decisions.
-            My focus is the AI and data field: training ML models with scikit-learn and
-            OpenCV, shipping generative AI via Gemini and Claude, and delivering analytics
-            that make data actually useful.
+            I design and build intelligent, data-driven systems — from applied machine
+            learning models and RAG chatbots to analytics dashboards that turn raw data into
+            decisions. My focus spans data science and analytics, ML engineering, and AI
+            engineering: training models with scikit-learn and OpenCV, shipping generative AI
+            via Gemini and Claude, and delivering Power BI dashboards and SQL analytics that
+            make data actually useful.
           </p>
           <div className="fade-up mt-8 flex flex-wrap gap-3" style={{ animationDelay: "240ms" }}>
             <Link
