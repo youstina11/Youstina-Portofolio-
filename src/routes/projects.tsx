@@ -122,6 +122,17 @@ const projects: {
     image: edaMiniImg.url,
   },
   {
+    name: "DiscountDecoded — Amazon Product Dataset Analysis",
+    tag: "Data · EDA",
+    year: "2026",
+    description:
+      "A data analysis project exploring pricing, ratings, and review patterns across 1,400+ Amazon products — answering whether bigger discounts mean happier customers. Cleaned ₹ currency strings, parsed pipe-delimited categories, and found a weak -0.16 discount-vs-rating correlation across 26.7M+ reviews.",
+    stack: ["Python", "Pandas", "Gamma"],
+    repo: "https://github.com/youstina11/Amazon-Product-Dataset-Analysis",
+    image: amazonImg.url,
+    liveUrl: "https://amazon-product-dataset-a-j2l5vks.gamma.site/",
+  },
+  {
     name: "Network Infrastructure Design",
     tag: "Networking",
     year: "2023",
