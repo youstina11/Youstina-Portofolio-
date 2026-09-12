@@ -9,6 +9,7 @@ import postpartumImg from "@/assets/projects/postpartum-home.png.asset.json";
 import unemploymentImg from "@/assets/projects/unemployment-rate-analysis.png.asset.json";
 import carPriceImg from "@/assets/projects/car-price-prediction.png.asset.json";
 import edaMiniImg from "@/assets/projects/eda-mini-project.png.asset.json";
+import amazonImg from "@/assets/projects/amazon-product-analysis.png.asset.json";
 
 
 export const Route = createFileRoute("/projects")({
@@ -119,6 +120,17 @@ const projects: {
     stack: ["Python", "SQLite", "Pandas", "Jupyter"],
     repo: "https://github.com/youstina11/EDA-mini-project-",
     image: edaMiniImg.url,
+  },
+  {
+    name: "DiscountDecoded — Amazon Product Dataset Analysis",
+    tag: "Data · EDA",
+    year: "2026",
+    description:
+      "A data analysis project exploring pricing, ratings, and review patterns across 1,400+ Amazon products — answering whether bigger discounts mean happier customers. Cleaned ₹ currency strings, parsed pipe-delimited categories, and found a weak -0.16 discount-vs-rating correlation across 26.7M+ reviews.",
+    stack: ["Python", "Pandas", "Gamma"],
+    repo: "https://github.com/youstina11/Amazon-Product-Dataset-Analysis",
+    image: amazonImg.url,
+    liveUrl: "https://amazon-product-dataset-a-j2l5vks.gamma.site/",
   },
   {
     name: "Network Infrastructure Design",
