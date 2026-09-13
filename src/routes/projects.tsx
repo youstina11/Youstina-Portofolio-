@@ -10,6 +10,7 @@ import unemploymentImg from "@/assets/projects/unemployment-rate-analysis.png.as
 import carPriceImg from "@/assets/projects/car-price-prediction.png.asset.json";
 import edaMiniImg from "@/assets/projects/eda-mini-project.png.asset.json";
 import amazonImg from "@/assets/projects/amazon-product-analysis.png.asset.json";
+import imdbImg from "@/assets/projects/imdb-sentiment-classifier.png.asset.json";
 
 
 export const Route = createFileRoute("/projects")({
@@ -131,6 +132,16 @@ const projects: {
     repo: "https://github.com/youstina11/Amazon-Product-Dataset-Analysis",
     image: amazonImg.url,
     liveUrl: "https://amazon-product-dataset-a-j2l5vks.gamma.site/",
+  },
+  {
+    name: "IMDB Sentiment Classifier",
+    tag: "ML · NLP",
+    year: "2026",
+    description:
+      "A natural language processing model that classifies IMDB movie reviews as positive or negative. Built with text preprocessing, TF-IDF vectorization, and a classification model achieving 94.8% confidence on sentiment prediction.",
+    stack: ["Python", "scikit-learn", "NLP", "TF-IDF", "Pandas"],
+    repo: "https://github.com/youstina11/IMDB-Sentiment-Classifier",
+    image: imdbImg.url,
   },
   {
     name: "Network Infrastructure Design",
