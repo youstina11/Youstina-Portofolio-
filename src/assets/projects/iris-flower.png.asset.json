@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "31aad346-9416-424d-823e-418eb8c327bd",
+  "asset_id": "af284e58-d28e-44b4-bb10-1a4a042341e6",
   "project_id": "0606ff5a-2dbe-49d8-a74f-bd4852e5a4b6",
-  "url": "/__l5e/assets-v1/31aad346-9416-424d-823e-418eb8c327bd/iris-flower.png",
-  "r2_key": "a/v1/0606ff5a-2dbe-49d8-a74f-bd4852e5a4b6/31aad346-9416-424d-823e-418eb8c327bd/iris-flower.png",
+  "url": "/__l5e/assets-v1/af284e58-d28e-44b4-bb10-1a4a042341e6/iris-flower.png",
+  "r2_key": "a/v1/0606ff5a-2dbe-49d8-a74f-bd4852e5a4b6/af284e58-d28e-44b4-bb10-1a4a042341e6/iris-flower.png",
   "original_filename": "iris-flower.png",
-  "size": 168405,
+  "size": 105395,
   "content_type": "image/jpeg",
-  "created_at": "2026-09-07T12:08:14Z"
+  "created_at": "2026-09-13T11:50:17Z"
 }
